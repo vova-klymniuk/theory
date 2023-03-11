@@ -34,3 +34,18 @@ var customer = {
         return this.orderList.total;
     }
 }
+
+var customer = function () {
+    this.orderList = {
+        total: 0,
+        elements: [
+            { Amount: 10 },
+            { Amount: 20 },
+            { Amount: 30 },
+        ],
+    };
+
+    return function GetTotalAmount(id) {
+        console.log(this.orderList, id);
+    };
+}
